@@ -53,31 +53,100 @@
         <!--row4 Instructions-->
         <div class="row4">
             <!-- Time stone -->
-  
-    <img class="img-fluid" src="assets/images/timestone2.jpg" alt="time-stone">
-  
-  <!-- reality stone-->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="assets/images/realitystone1.jpg" alt="reality-stone">
-  </div>
-  <!-- soul stone-->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="assets/images/soulstone2.jpg" alt="soul-stone">
-  </div>
-  <!--space stone-->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="assets/images/spacestone4.jpg" alt="space-stone">
-  </div>
-  <!--mind stone -->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="assets/images/mindstone.jpg" alt="mind-stone">
-  </div>
-  <!-- power stone-->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="assets/images/powerstone.jpg" alt="power-stone">
-  </div>
-  
-  <!-- Grid column -->
+
+            <style type="text/css">
+                .jem-image {
+                    width: 200px;
+                    height: 140px;
+                    display: block;
+                    float: left;
+                    padding-bottom: 20px;
+                    margin: 10px;
+                    box-sizing: border-box;
+                    padding: 10px 10px 10px;
+                    cursor: pointer;
+                    border-radius: 70px;
+                    /* Adds curve to border corners */
+                    text-decoration: none;
+                    border: 2px solid rgb(18, 80, 100);
+
+
+                }
+            </style>
+
+            <h1>A Number to Guess:
+                <span id="number-to-guess"></span>
+            </h1>
+            <div id="jems">
+                <!-- Here we added a single crystal image -->
+                <!-- <img class="jem-image" src="assets/images/timestone2.jpg" alt="time-stone"> -->
+            </div>
+            <!-- Here we added a link to the jQuery library -->
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+            <!-- Below is where our JavaScript code will go -->
+            <script type="text/javascript">
+
+                var startingNumber = [100, 60, 50, 25, 43];
+                $(".number-to-guess").text(startingNumber);
+
+                var counter = 0;
+                var numberOptions = [10, 5, 3, 7, 11, 2];
+                var infinityStones = ["mindstone", "realitystone1", "soulstone2", "spacestone4", "timestone2"];
+                for (var i = 0; i < infinityStones.length; i++) {
+                    var imageCrystal = $("<img>");
+                    imageCrystal.addClass("jem-image");
+                    imageCrystal.attr("src", "assets/images/" + infinityStones[i] + ".jpg")
+                    imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+                    $("#jems").append(imageCrystal);
+                }
+
+
+                $(".jem-image").on("click", function (event) {
+
+                    console.log("Event: data-crystalvalue", event.target.getAttribute('data-crystalvalue'))
+            
+                    
+                    //console.log("Math 2", Math.random());
+                    //console.log("Math 3", Math.round(Math.random()));
+            
+                    
+                    //var increment = numberOptions[Math.round(Math.random())];
+                    var increment = Number(event.target.getAttribute('data-crystalvalue'));
+                    //console.log("increment", increment);
+                    counter += increment;
+                    //alert("New score is " + counter);
+                    console.log("Counter: ", counter);
+
+                    if (counter === startingNumber) {
+                        alert("You win!");
+                    }
+                    else if (counter >= startingNumber) {
+                        alert("You lose!")
+                    }
+                });
+
+
+            </script>
+
+
+
+
+
+            <!--space stone-->
+            <!-- <div class="mb-3 pics animation all 2">
+                <img class="img-fluid" src="assets/images/spacestone4.jpg" alt="space-stone">
+            </div> -->
+            <!--mind stone -->
+            <!-- <div class="mb-3 pics animation all 2">
+                <img class="img-fluid" src="assets/images/mindstone.jpg" alt="mind-stone">
+            </div> -->
+            <!-- power stone-->
+            <!-- <div class="mb-3 pics animation all 2">
+                <img class="img-fluid" src="assets/images/powerstone.jpg" alt="power-stone">
+            </div> -->
+
+            <!-- Grid column -->
             <h2>Press any letter to get started</h2>
             <p>Placeholder</p>
 
@@ -101,25 +170,13 @@
 
         </div>
 
-        <!--row8 this is a box for your Clue sentence-->
-        <div class="row8">
 
-            <p id="clue">Clue -</p>
 
-        </div>
 
-        
-        </div>
+    </div>
     </div>
 
     <br />
-    <!--row12 with the buttons to play the game-->
-    <div class="row12">
-        <div class="col-lg-12">
-            
-        </div>
-    </div>
-
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
         crossorigin="anonymous "></script>
