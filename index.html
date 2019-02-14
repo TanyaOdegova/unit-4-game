@@ -25,168 +25,58 @@
                 <img src="assets/images/banner.jpeg">
             </div>
         </div>
-        <!--row2 with the title of the game-->
-        <div class="row2">
-            <div class="col-lg-12">
-                <h1>Crystal Collector Game!</h1>
-            </div>
+        <div class="wrap">
+            <h1>Crystal Collector</h1>
         </div>
-        <!--row3 a foreword from me-->
-        <div class="row3">
-            <div class="assignment">
-                <p>You will be given a random number at the start of the game.</p>
-                <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
-                    total score.
-                </p>
-                <p>
-                    You win the game by matching your total score to random number, you lose the game if your total score goes above the random
-                    number.
-                </p>
-                <p>
-                    The value of each crystal is hidden from you until you click on it.
-                </p>
-                <p>
-                    Each time when the game starts, the game will change the values of each crystal.
-                </p>
-            </div>
+        <div class="instructions">
+            <h2>Here's how you play the game:</h2>
+            </br>
+            <ol>
+                <li>You will be given a random number at the start of the game.<span>"Number To Get"</span></li>
+                <li>There are four crystals below.</li>
+                <ul>
+                    <li id="timestone">Timestone</li>
+                    <li id="realitystone">Realitystone</li>
+                    <li id="spacestone">Spacestone</li>
+                    <li id="mindstone">Mindstone</li>
+                    <li id="powerstone">Powerstone</li>
+                    <li id="soulstone">Soulstone</li>
+                </ul>
+                <li>By clicking on a crystal, you will add a specific amount of points to your total score.</li>
+                <li>You win the game by matching your total score to the random number.</li>
+                <li>You lose the game if your total score goes above the random number.</li>
+                <li>The value of each crystal is hidden from you until you click on it.</li>
+                <li>Each time when the game starts, the game will change the values of each crystal.</li>
+            </ol>
         </div>
-        <!--row4 Instructions-->
-        <div class="row4">
-            <!-- Time stone -->
-
-            <style type="text/css">
-                .jem-image {
-                    width: 200px;
-                    height: 140px;
-                    display: block;
-                    float: left;
-                    padding-bottom: 20px;
-                    margin: 10px;
-                    box-sizing: border-box;
-                    padding: 10px 10px 10px;
-                    cursor: pointer;
-                    border-radius: 70px;
-                    /* Adds curve to border corners */
-                    text-decoration: none;
-                    border: 2px solid rgb(18, 80, 100);
-
-
-                }
-            </style>
-
-            <h1>A Number to Guess:
-                <span id="number-to-guess"></span>
-            </h1>
-            <div id="jems">
-                <!-- Here we added a single crystal image -->
-                <!-- <img class="jem-image" src="assets/images/timestone2.jpg" alt="time-stone"> -->
-            </div>
-            <!-- Here we added a link to the jQuery library -->
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-            <!-- Below is where our JavaScript code will go -->
-            <script type="text/javascript">
-
-                var startingNumber = [100, 60, 50, 25, 43];
-                $(".number-to-guess").text(startingNumber);
-
-                var counter = 0;
-                var numberOptions = [10, 5, 3, 7, 11, 2];
-                var infinityStones = ["mindstone", "realitystone1", "soulstone2", "spacestone4", "timestone2"];
-                for (var i = 0; i < infinityStones.length; i++) {
-                    var imageCrystal = $("<img>");
-                    imageCrystal.addClass("jem-image");
-                    imageCrystal.attr("src", "assets/images/" + infinityStones[i] + ".jpg")
-                    imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-                    $("#jems").append(imageCrystal);
-                }
-
-
-                $(".jem-image").on("click", function (event) {
-
-                    console.log("Event: data-crystalvalue", event.target.getAttribute('data-crystalvalue'))
-            
-                    
-                    //console.log("Math 2", Math.random());
-                    //console.log("Math 3", Math.round(Math.random()));
-            
-                    
-                    //var increment = numberOptions[Math.round(Math.random())];
-                    var increment = Number(event.target.getAttribute('data-crystalvalue'));
-                    //console.log("increment", increment);
-                    counter += increment;
-                    //alert("New score is " + counter);
-                    console.log("Counter: ", counter);
-
-                    if (counter === startingNumber) {
-                        alert("You win!");
-                    }
-                    else if (counter >= startingNumber) {
-                        alert("You lose!")
-                    }
-                });
-
-
-            </script>
-
-
-
-
-
-            <!--space stone-->
-            <!-- <div class="mb-3 pics animation all 2">
-                <img class="img-fluid" src="assets/images/spacestone4.jpg" alt="space-stone">
-            </div> -->
-            <!--mind stone -->
-            <!-- <div class="mb-3 pics animation all 2">
-                <img class="img-fluid" src="assets/images/mindstone.jpg" alt="mind-stone">
-            </div> -->
-            <!-- power stone-->
-            <!-- <div class="mb-3 pics animation all 2">
-                <img class="img-fluid" src="assets/images/powerstone.jpg" alt="power-stone">
-            </div> -->
-
-            <!-- Grid column -->
-            <h2>Press any letter to get started</h2>
-            <p>Placeholder</p>
-
+        <div class="numberToMatch">
+            <h3>Number To Get:
+                <span id= "randomNumber"></span>
+            </h3>
         </div>
-        <!--row5 alphabet letters in the form of buttons-->
-        <div class="row5">
-            <div id="buttons">
-            </div>
+        <div class="winsAndLosses">
+            <h4>Wins:
+                <span id= "numberWins"></span>
+                </br>
+                Losses: 
+                <span id= "numberLosses"></span>
+            </h4>
         </div>
-        <!--row6 here is the box for your word -->
-
-        <div id="hold">
-
-
+        <div class="gems">
+            <img src="assets/images/timestone2.jpg" class=gemImage id="one" alt="Timestone">
+            <img src="assets/images/realitystone1.jpg" class=gemImage id="two" alt="Realitystone">
+            <img src="assets/images/spacestone4.jpg" class=gemImage id= "three" alt="Spacestone">
+            <img src="assets/images/mindstone.jpg" class=gemImage id= "four" alt="Mindstone">
+            <img src="assets/images/powerstone.jpg" class=gemImage id= "four" alt="Powerstone">
+            <img src="assets/images/soulstone2.jpg" class=gemImage id= "four" alt="Soulstone">
         </div>
-        <br></br>
-        <!--row7 this is a box for your lives-->
-        <div class="row7">
-
-            <p id="mylives"></p>
-
+        <div class="userTotal">
+            <h5>Your total score is:
+                <span id="finalTotal"></span>
+            </h5>
         </div>
-
-
-
-
-    </div>
-    </div>
-
-    <br />
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
-        crossorigin="anonymous "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js " integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut "
-        crossorigin="anonymous "></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js " integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k "
-        crossorigin="anonymous "></script>
 </body>
 <!-- Footer -->
-
 <footer class="footer">
     <div class="container">
         <div class="row">

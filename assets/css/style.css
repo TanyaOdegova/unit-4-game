@@ -1,185 +1,97 @@
-body {
-    background-color: darkslategrey;
-    width: 640px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    font-family: "Indie Flower";
-    font-size: 20px;
-    color: rgb(59, 143, 59);
-    height:100%;
-    text-align:center;
-    font-size:18px;
-    }
-    
-    A:link { COLOR: white; TEXT-DECORATION: none; font-weight: normal }
-    A:visited { COLOR: rgb(150, 145, 145); TEXT-DECORATION: none; font-weight: normal }
-    A:active { COLOR: rgb(247, 240, 234); TEXT-DECORATION: none } 
-    
-    .img-fluid {
-      width: 200px;
-      height: 140px;
-      display: block;
-      float: left;
-      padding-bottom: 20px;
-      margin: 10px;
-      box-sizing: border-box;
-      padding: 10px 10px 10px;
-      cursor: pointer;
-      border-radius: 70px; /* Adds curve to border corners */
-      text-decoration: none;
-      border: 2px solid rgb(18, 80, 100);
-    }
-    .img-fluid:hover {
-        border-radius: 100px;
+@import "compass/css3";
+@import "compass/css3/trnasform;
 
+body {
+    background-color: darkslategray;
+    widthL 640px;
+    margin-left: 20px;
+    font-family: "Indie Flower";
+    font-size:20px;
+    color: lightgrey;
+    height: auto;
+    text-align: center;
+}
+    A: link {
+        color: white;
+        text-decoration: none;
+         font-weight:bold;
     }
-    .onclick {
-        width: 10px !important;
-        height: 70px !important;
-        border-radius: 50% !important;
-        border-color:$gray;
-        border-width:4px;
-        font-size:0;
-        border-left-color: #008CBA;
-        animation: rotating 2s 0.25s linear infinite;
-        &:hover {
-          color: dodgerblue;
-          background: white;
-        }
-    p {
-      color:rgb(93, 184, 93);
-      font-family: "Indie Flower";
-      font-size: 20px;
+    A: visited {
+        color: white;
+        text-decoration: underline;
     }
-    h1 {
-      font-family: 'Bangers';
-      color: #ce7e61;
-      font-weight: 100px;
-      font-size: 35px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      text-align: center;
-      padding: 5px;
+
+    A: active {
+        color: rgb(58, 55, 55) ;
+        
+    }
+    wrap {
+        padding: 5em 0.5em;
+        margin: 0 auto;
+    }
+    h1{
+        font-family: Bangers;
+        color: #ffff;
+        text-align: center;
+        white-space: nowrap;
+        text-shadow: 5em 5px 0 rgb(238, 238, 162);
+        @include skew(0, -6.7deg, false);
+        @include transition-property(font-size);
+        @include transition-duration(0.5s);
+        text-transform: uppercase;
+        z-index: 10;
+        font-weight: normal;
+        font-size: 35px;
+        margin-top: 10px 0px 20px 0px;  
     }
     h2 {
-      font-family: 'Bangers';
-      font-size: 25px;
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      clear: both;
+        font-family: Bangers;
+        margin-top: 10px;
+        font-size: 20px;
+        text-align: center;
+        color: rgb(136, 125, 125);
     }
-    #hold {
-      width: 100%;
-      height: 50px;
-      clear: both;
-      margin-left: 100px;
-      margin-top: 20px;
+    h3 {
+        font-family: Bangers;
+        margin: 10px 10px 10px 20px;
+        font-size: 40px;
+        text-align: center;
+        color: rgb(132, 132, 216);
     }
-    canvas{
-      color:white;
-      border: white dashed 2px;
-      padding:15px;
-    }
-    #alphabet {
-      margin:25px auto;
-      padding:0;
-      max-width:600px;
-      width: 400px;
-    }
-    #alphabet li {
-      float:left;
-      margin: 0 10px 10px 0;
-      list-style:none;
-      width:35px;
-      height:30px;
-      padding-top:10px;
-      color: coral;
-      cursor:pointer;
-      border: solid 1px white;
-      margin-bottom: 10px;
-      text-align: center;
-      }
-    
-    #my-word {
-      margin: 50px;
-      padding: 50px;
-      float: left;
-      display: block;
-      padding: 0;
-      display:block;
-    }
-    
-    #my-word li {
-      position: relative;
-      list-style: none;
-      margin: 0;
-      display: inline-block;
-      padding: 0 10px;
-      font-size:1.6em;
-    }
-    
-    .active {
-      cursor: pointer;
-    }
-    
-    #mylives{
-      font-size:25px;
-      clear: both;
-      width: 100%;
-      height: 100px;
-      text-align:center;
-      display:inline block;
-      border: 5px;
-      margin: 10px 5px 5px 10px;
-    }
-    #clue {
-      padding: 10px;
-      margin-bottom: 50px;
-    }
-    
-    
-    button{
-      
-      background:#dc9c84;
-      color: black;
-      border: solid 1px white;
-      text-decoration:none;
-      cursor:pointer;
-      font-size: 25px;
-      padding:18px 10px;
-      width:180px;
-      margin: 10px;
-      outline: none;
-    }
-      .button a:hover {
-        color: white;
-    }
-    
-    @media (max-width: 748px) {
-      #alphabet {
-      padding:0 0 0 15px;
-    }
-      }
-    
-      @media (max-width: 640px) {
-      #alphabet {
-      padding:0 0 0 25px;
-    }
-      }
-      .footer {
-        margin-left: 0px;
-        margin-top: 30px;
-        background-color: transparent;
-        color: coral;
-        font-size: 25px;
-        position: bottom-fixed;
-        font-family: "Kaushan Script";
-        padding-left: 0px;
-        border-top: 10px;
-        clear: both;
-        flex-shrink: 0;
+h4 {
+    font-family: Bangers;
+        margin: 10px 10px 10px 20px;
+        font-size: 20px;
+        text-align: left;
+        color: rgb(238, 238, 162);
+}
+    li {
+        font-family: Indie Flower;
+        font-size: 20px;
+        color: rgba(247, 240, 154, 0.849);
         text-align: center;
     }
-    .footer a:hover {
-      color: white;
+    ul {
+        display: none;
+    }
+.gemImage {
+    width: 200px;
+    height: 140px;
+    display: block;
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 2px solid rgb(132, 132, 216);
+    border-radius: 70px;
+    text-decoration: none;
+}
+ .footer {
+float: left;
+color: white;
+font-family: Bangers;
+font-size: 20px;
+text-align: left;
+margin-top: 20px;
+margin-left: 15px;
+ }
