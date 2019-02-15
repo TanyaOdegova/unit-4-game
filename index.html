@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="jquery-alert.js"></script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript.js"></script>
 </head>
@@ -25,6 +28,7 @@
                 <img src="assets/images/banner.jpeg">
             </div>
         </div>
+
         <div class="wrap">
             <h1>Crystal Collector</h1>
         </div>
@@ -32,51 +36,46 @@
             <h2>Here's how you play the game:</h2>
             </br>
             <ol>
-                <li>You will be given a random number at the start of the game.<span>"Number To Get"</span></li>
-                <li>There are four crystals below.</li>
-                <ul>
-                    <li id="timestone">Timestone</li>
-                    <li id="realitystone">Realitystone</li>
-                    <li id="spacestone">Spacestone</li>
-                    <li id="mindstone">Mindstone</li>
-                    <li id="powerstone">Powerstone</li>
-                    <li id="soulstone">Soulstone</li>
-                </ul>
-                <li>By clicking on a crystal, you will add a specific amount of points to your total score.</li>
+
+                <li>There are six infinity stones below. Your mission is to save the Universe from Thanos. To win quess the value
+                    of each infinity stone to match the Number to Get. </li>
+                <li>By clicking on a magical gem, you will add a specific amount of points to your total score.</li>
                 <li>You win the game by matching your total score to the random number.</li>
                 <li>You lose the game if your total score goes above the random number.</li>
-                <li>The value of each crystal is hidden from you until you click on it.</li>
-                <li>Each time when the game starts, the game will change the values of each crystal.</li>
+                <li>The value of each inifinity stone is hidden from you until you click on it.</li>
+                <li>Each time when the game starts, the game will change the values of each gem.</li>
             </ol>
         </div>
-        <div class="numberToMatch">
+        <div class="numberToMatch" , "col-lg-12">
             <h3>Number To Get:
-                <span id= "randomNumber"></span>
+                <span id="randomNumber"></span>
             </h3>
         </div>
-        <div class="winsAndLosses">
+
+        <div class="winsAndLosses" , "col-lg-12">
             <h4>Wins:
-                <span id= "numberWins"></span>
+                <span id="numberWins"></span>
                 </br>
-                Losses: 
-                <span id= "numberLosses"></span>
+                Losses:
+                <span id="numberLosses"></span>
             </h4>
         </div>
-        <div class="gems">
+        <div class="col-lg-12">
+            <div class="userTotal">
+                <h5>Your total score is:
+                    <span id="finalTotal"></span>
+                </h5>
+            </div>
+        </div>
+        <div class="gems" , "col-lg-12">
             <img src="assets/images/timestone2.jpg" class=gemImage id="one" alt="Timestone">
             <img src="assets/images/realitystone1.jpg" class=gemImage id="two" alt="Realitystone">
-            <img src="assets/images/spacestone4.jpg" class=gemImage id= "three" alt="Spacestone">
-            <img src="assets/images/mindstone.jpg" class=gemImage id= "four" alt="Mindstone">
-            <img src="assets/images/powerstone.jpg" class=gemImage id= "four" alt="Powerstone">
-            <img src="assets/images/soulstone2.jpg" class=gemImage id= "four" alt="Soulstone">
+            <img src="assets/images/spacestone4.jpg" class=gemImage id="three" alt="Spacestone">
+            <img src="assets/images/mindstone.jpg" class=gemImage id="four" alt="Mindstone">
+            <img src="assets/images/powerstone.jpg" class=gemImage id="five" alt="Powerstone">
+            <img src="assets/images/soulstone2.jpg" class=gemImage id="six" alt="Soulstone">
         </div>
-        <div class="col-lg-12">
-        <div class="userTotal">
-            <h5>Your total score is:
-                <span id="finalTotal"></span>
-            </h5>
-        </div>
-        </div>
+
 </body>
 <!-- Footer -->
 <footer class="footer">
