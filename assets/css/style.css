@@ -34,7 +34,7 @@ body {
         color: #ffff;
         text-align: center;
         white-space: nowrap;
-        text-shadow: 5em 5px 0 rgb(238, 238, 162);
+        text-shadow: 5px 5px 0 rgb(41, 41, 39);
         @include skew(0, -6.7deg, false);
         @include transition-property(font-size);
         @include transition-duration(0.5s);
@@ -42,7 +42,7 @@ body {
         z-index: 10;
         font-weight: normal;
         font-size: 35px;
-        margin-top: 10px 0px 20px 0px;  
+        margin: 10px 0px 0px 0px;  
     }
     h2 {
         font-family: Bangers;
@@ -64,6 +64,14 @@ h4 {
         font-size: 20px;
         text-align: left;
         color: rgb(238, 238, 162);
+}
+h5 {
+    font-family: Bangers;
+        margin: 10px 10px 10px 20px;
+        font-size: 40px;
+        text-align: center;
+        float: left;
+        color: rgb(132, 132, 216);
 }
     li {
         font-family: Indie Flower;
