@@ -30,6 +30,9 @@ $(document).ready(function(){
         num6= Math.floor(Math.random()*11+1);
         userTotal= 0;
         $('#finalTotal').text(userTotal);
+        setTimeout(function(){
+          document.getElementById("resultholder").style.display = "none"; 
+         }, 3000);
         } 
   //adds the wins to the userTotal
   function winner(){

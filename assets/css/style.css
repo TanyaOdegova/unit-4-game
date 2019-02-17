@@ -4,7 +4,7 @@
 body {
     background-color: darkslategray;
     margin-left: 0px;
-    font-family: "Indie Flower";
+    font-family: "Cabin Sketch";
     font-size:20px;
     color: lightgrey;
     height: auto;
@@ -90,7 +90,7 @@ h5 {
     float: left;
 }
     li {
-        font-family: Indie Flower;
+        font-family: Cabin Sketch;
         font-size: 20px;
         color: rgba(247, 240, 154, 0.849);
         text-align: center;
@@ -112,18 +112,22 @@ h5 {
     height: 120px;
     display: block;
     float: left;
-    padding: 10px;
+    padding: 3px;
     margin: 5px;
     box-sizing: border-box;
-    border: 2px solid rgb(132, 132, 216);
+    border: 2px solid rgb(221, 221, 235);
+    box-shadow: 2px 2px 3px #000;
     border-radius: 70px;
     text-decoration: none;
     cursor: pointer;
+   
 }
     .gemImage:hover {
         /* Start the shake animation and make the animation last for 0.5 seconds */
-        animation: shake 0.5s; 
-      
+        animation: shake 0.5s;
+        opacity: 0.5; 
+        transition: background-color .5s;
+        background-color: rgba(153, 106, 143, 0.164);
         /* When the animation is finished, start again */
         animation-iteration-count: infinite; 
       }
