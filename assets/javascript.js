@@ -1,9 +1,10 @@
 $(document).ready(function(){
-
+  //The random number shown at the start of the game should be between 19 - 120.
+  // 120 minus 19 is 101.
     var Random=Math.floor(Math.random()*101+19)
   
     $('#randomNumber').text(Random);
-   
+    //Each crystal should have a random hidden value between 1 - 12.
     var num1= Math.floor(Math.random()*11+1)
     var num2= Math.floor(Math.random()*11+1)
     var num3= Math.floor(Math.random()*11+1)
@@ -32,14 +33,14 @@ $(document).ready(function(){
         } 
   //adds the wins to the userTotal
   function winner(){
-  alert("You won!");
+  document.getElementById("resultholder").innerHTML = "You won!";
     wins++; 
     $('#numberWins').text(wins);
     reset();
   }
   //addes the losses to the userTotal
   function loser(){
-  alert ("You lose!");
+  document.getElementById("resultholder").innerHTML = "You lose! Please try again";
     losses++;
     $('#numberLosses').text(losses);
     reset()
