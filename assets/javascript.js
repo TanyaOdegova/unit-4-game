@@ -37,7 +37,8 @@ $(document).ready(function(){
   //adds the wins to the userTotal
   function winner(){
   document.getElementById("resultholder").innerHTML = "You won!";
-    wins++; 
+    wins++;
+    document.getElementById("resultholder").style.display = "inline"; 
     $('#numberWins').text(wins);
     reset();
   }
@@ -45,6 +46,7 @@ $(document).ready(function(){
   function loser(){
   document.getElementById("resultholder").innerHTML = "You lose! Please try again";
     losses++;
+    document.getElementById("resultholder").style.display = "inline";
     $('#numberLosses').text(losses);
     reset()
   }
